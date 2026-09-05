@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #07152b;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.18), transparent 35%),
+        radial-gradient(circle at 10% 90%, rgba(20, 70, 130, 0.4), transparent 40%),
+        linear-gradient(135deg, #020817, #07152b, #0b2447);
+    z-index: -2;
+}
+
+.particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #d4af37;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(110vh) scale(0);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.launch-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    animation: fadeIn 1.5s ease;
+}
+
+.logo{
+    height: 100px ;
+    width: 100px;
+}
+
+.cross {
+    font-size: 70px;
+    color: #d4af37;
+    margin-bottom: 25px;
+    text-shadow:
+        0 0 20px rgba(212,175,55,0.6),
+        0 0 60px rgba(212,175,55,0.3);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        transform: scale(1);
+        text-shadow: 0 0 15px rgba(212,175,55,0.4);
+    }
+
+    to {
+        transform: scale(1.1);
+        text-shadow:
+            0 0 30px rgba(212,175,55,0.8),
+            0 0 80px rgba(212,175,55,0.4);
+    }
+}
+
+.small-title {
+    letter-spacing: 5px;
+    font-size: 16px;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(45px, 8vw, 110px);
+    letter-spacing: 8px;
+    font-weight: 600;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background: #d4af37;
+    margin: 30px 0;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0.85;
+}
+
+.launch-btn {
+    margin-top: 55px;
+    padding: 20px 45px;
+    border-radius: 50px;
+    border: 1px solid #d4af37;
+    background: linear-gradient(135deg, #d4af37, #f5d76e);
+    color: #07152b;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+}
+
+.launch-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(212,175,55,0.5);
+}
+
+.launch-btn:active {
+    transform: scale(0.97);
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+.instruction {
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+.countdown-screen,
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.countdown-title {
+    letter-spacing: 6px;
+    color: #d4af37;
+    font-size: 15px;
+}
+
+.countdown-number {
+    font-family: "Cinzel", serif;
+    font-size: clamp(150px, 30vw, 350px);
+    font-weight: bold;
+    color: white;
+    text-shadow:
+        0 0 30px rgba(255,255,255,0.4),
+        0 0 100px rgba(212,175,55,0.4);
+    animation: pulseNumber 1s infinite;
+}
+
+@keyframes pulseNumber {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.countdown-line {
+    width: 180px;
+    height: 2px;
+    background: #d4af37;
+    margin: 20px;
+}
+
+.countdown-text {
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.welcome-content {
+    animation: welcomeAnimation 2s ease forwards;
+}
+
+.welcome-small {
+    letter-spacing: 8px;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.welcome-screen h2 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(30px, 5vw, 70px);
+    max-width: 1000px;
+}
+
+.welcome-screen h3 {
+    font-family: "Cinzel", serif;
+    color: #d4af37;
+    font-size: clamp(35px, 6vw, 80px);
+    letter-spacing: 6px;
+    margin-top: 10px;
+}
+
+.welcome-line {
+    width: 150px;
+    height: 2px;
+    background: #d4af37;
+    margin: 35px auto;
+}
+
+.welcome-message {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.redirect-message {
+    margin-top: 40px;
+    opacity: 0.7;
+}
+
+.loading-bar {
+    width: 250px;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    margin: 25px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background: #d4af37;
+    animation: loading 5s linear forwards;
+}
+
+@keyframes loading {
+    to { width: 100%; }
+}
+
+@keyframes welcomeAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .small-title {
+        letter-spacing: 3px;
+        font-size: 10px;
+    }
+
+    h1 {
+        letter-spacing: 4px;
+    }
+
+    .launch-btn {
+        padding: 17px 28px;
+        font-size: 12px;
+    }
+
+    .countdown-title {
+        letter-spacing: 3px;
+        font-size: 12px;
+    }
+
+    .welcome-small {
+        letter-spacing: 4px;
+    }
+
+    .welcome-message {
+        font-size: 16px;
+    }
+}
